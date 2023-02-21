@@ -18,17 +18,14 @@ pipeline {
                 sh 'mvn test'
             }
         }
-        stage('Cucumber') {
+        stage('Cucumber Report') {
             steps {
                 sh 'mvn verify'
+                cucumber buildStatus: "UNSTABLE",
+                                                        fileIncludePattern: "**/cucumber.json",
+                                                        jsonReportDirectory: 'target'
             }
-            post {
-                always {
-                    cucumber buildStatus: "UNSTABLE",
-                                        fileIncludePattern: "**/cucumber.json",
-                                        jsonReportDirectory: 'target'
-                }
-            }
+
         }
     }
 }

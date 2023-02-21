@@ -2,6 +2,12 @@ pipeline {
     agent any
 
     stages {
+        stage('Checkout') {
+            steps {
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']],
+                         userRemoteConfigs: [[url: 'https://github.com/mahmoudbelka2022/AdamMahWeb.git']]])
+            }
+        }
         stage('Build') {
             steps {
                 sh 'mvn clean package'
@@ -18,7 +24,8 @@ pipeline {
             }
             post {
                 always {
-                    cucumber buildStatus: 'UNSTABLE', jsonReportDirectory: 'target/cucumber/json', failedStepsNumber: 10
+                    cucumber buildStatus: 'UNSTABLE', jsonReportDirectory: 'target/json', failedStepsNumber: 10
+                    archiveArtifacts artifacts: 'target/*.html,target/*.json', onlyIfSuccessful: true
                 }
             }
         }

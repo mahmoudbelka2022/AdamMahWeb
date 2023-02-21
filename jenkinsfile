@@ -24,8 +24,8 @@ pipeline {
             }
             post {
                 always {
-                    cucumber buildStatus: 'UNSTABLE', jsonReportDirectory: 'target/json', failedStepsNumber: 10
-                    archiveArtifacts artifacts: 'target/*.html,target/*.json',fileIncludePattern: '**/*', onlyIfSuccessful: true
+                    cucumber buildStatus: 'UNSTABLE', jsonReportDirectory: 'target/cucumber/json', failedStepsNumber: 10
+                                        archiveArtifacts artifacts: 'target/cucumber/*.html,target/cucumber/*.json', excludes: '', includes: 'target/cucumber/*', onlyIfSuccessful: true
                 }
             }
         }

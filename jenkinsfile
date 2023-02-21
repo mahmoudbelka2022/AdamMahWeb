@@ -22,24 +22,23 @@ pipeline {
             steps {
                 sh 'mvn verify'
                 cucumber buildStatus: "UNSTABLE",
-                                                        fileIncludePattern: "**/cucumber.json",
-                                                        jsonReportDirectory: 'target'
+                fileIncludePattern: "**/cucumber.json",
+                jsonReportDirectory: 'target',
+                emailext (
+                                        to: 'kamalbelkati@gmail.com',
+                                        subject: "Jenkins Build",
+                                        body: "The build has completed",
+                                        attachLog: true,
+                                        mimeType: 'text/html',
+                                        from: 'jenkins@example.com',
+                                        replyTo: 'admin@example.com',
+                                        smtpServer: 'smtp.gmail.com',
+                                        smtpPort: 465,
+                                        // replace with your username and password
+                                        credentialsId: 'belkati2017@gmail.com/Mamabga84@'
+                                    )
             }
         }
-        post{
-        emailext (
-                        to: 'kamalbelkati@gmail.com',
-                        subject: "Jenkins Build",
-                        body: "The build has completed",
-                        attachLog: true,
-                        mimeType: 'text/html',
-                        from: 'jenkins@example.com',
-                        replyTo: 'admin@example.com',
-                        smtpServer: 'smtp.gmail.com',
-                        smtpPort: 465,
-                        // replace with your username and password
-                        credentialsId: 'belkati2017@gmail.com/Mamabga84@'
-                    )
-                    }
+
     }
 }

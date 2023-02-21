@@ -25,7 +25,7 @@ pipeline {
             post {
                 always {
                     cucumber buildStatus: 'UNSTABLE', jsonReportDirectory: 'target/json', failedStepsNumber: 10
-                    archiveArtifacts artifacts: 'target/*.html,target/*.json', onlyIfSuccessful: true
+                    archiveArtifacts artifacts: 'target/*.html,target/*.json',fileIncludePattern: '**/*', onlyIfSuccessful: true
                 }
             }
         }

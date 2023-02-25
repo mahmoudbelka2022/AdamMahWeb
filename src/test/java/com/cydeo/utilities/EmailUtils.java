@@ -12,7 +12,7 @@ import javax.mail.internet.*;
 
     public class EmailUtils {
 
-        public static void sendEmailWithAttachment(String recipient, String subject, String body, String attachmentFilePath) throws MessagingException {
+        public static void sendEmailWithAttachment(String recipient, String subject, String body, String attachmentFilePath, String jsonReport) throws MessagingException {
 
             String sender = "belkati2017@gmail.com";
             String password = "vutbntcmloeveyvu";

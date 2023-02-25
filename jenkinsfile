@@ -27,19 +27,5 @@ pipeline {
 
             }
         }
-
-        post {
-          always {
-            emailext(
-              subject: 'Build Notification',
-              body: 'This is a notification for the Jenkins build.',
-              to: 'kamalbelkati@gmail.com'
-            )
-          }
-        }
-
-
-
-
     }
 }

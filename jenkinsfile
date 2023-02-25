@@ -28,16 +28,7 @@ pipeline {
             }
         }
 
-               success {
-                    emailext body: "The Cucumber tests passed successfully.",
-                    subject: "Cucumber tests passed",
-                    to: "belkatimahmoud@gmail.com"
-                }
-                unstable {
-                    emailext body: "The Cucumber tests failed or were unstable.",
-                    subject: "Cucumber tests failed or were unstable",
-                    to: "adambelkati2023@gmail.com"
-                }
+
 
 
     }

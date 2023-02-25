@@ -18,7 +18,7 @@ public class ReportHooks {
 
     @AfterAll
     public static void sendReportEmail() throws Exception {
-        sendEmailWithReport("kamalbelkati@gmail.com", "target/cucumber.json");
+        sendEmailWithReport("kamalbelkati@gmail.com", "target/cucumber/cucumber-html-reports");
     }
 
 

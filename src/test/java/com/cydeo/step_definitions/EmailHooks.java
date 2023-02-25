@@ -17,9 +17,9 @@ public class EmailHooks {
         String body = "Please find attached the Cucumber report for the latest test run.";
 
         String htmlFilePath = "target/cucumber-reports.html";
-//        String pdfFilePath = "target/cucumber/cucumber-reports";
-//        PdfUtils.convertHtmlToPdf(htmlFilePath, pdfFilePath);
+        String pdfFilePath = "target/cucumber/cucumber-reports";
+        PdfUtils.convertHtmlToPdf(htmlFilePath, pdfFilePath);
 
-        EmailUtils.sendEmailWithAttachment(recipient, subject, body, htmlFilePath);
+        EmailUtils.sendEmailWithAttachment(recipient, subject, body, pdfFilePath);
     }
 }

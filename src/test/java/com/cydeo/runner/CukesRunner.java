@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
                 "me.jvt.cucumber.report.PrettyReports:target/cucumber",
                 "rerun:target/rerun.txt"},
         features = "src/test/resources/features",
-        glue = {"com/cydeo/step_definitions"},
+        glue = {"com/cydeo/step_definitions", "com/cydeo/step_definitions/ReportHooks"},
         dryRun = false,
         tags = "@googleSearch"
 )

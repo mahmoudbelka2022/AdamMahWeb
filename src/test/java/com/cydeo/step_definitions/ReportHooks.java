@@ -11,14 +11,14 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Properties;
 
-import static com.cydeo.utilities.EmailReportUtils.sendEmailWithReport;
+import static com.cydeo.utilities.EmailReportUti.sendEmailReport;
 
 public class ReportHooks {
 
 
     @AfterAll
     public static void sendReportEmail() throws Exception {
-        sendEmailWithReport("kamalbelkati@gmail.com", "target/cucumber/cucumber-html-reports");
+        sendEmailReport("kamalbelkati@gmail.com", "target/cucumber-html-reports");
     }
 
 

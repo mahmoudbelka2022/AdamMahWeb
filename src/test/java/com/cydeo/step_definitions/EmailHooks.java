@@ -16,10 +16,10 @@ public class EmailHooks {
         String subject = "Cucumber Report - " + new Date().toString();
         String body = "Please find attached the Cucumber report for the latest test run.";
 
-        String htmlFilePath = "target/cucumber-reports/report.html";
-        String pdfFilePath = "target/cucumber-reports/report.pdf";
-        PdfUtils.convertHtmlToPdf(htmlFilePath, pdfFilePath);
+        String htmlFilePath = "target/cucumber-reports.html";
+//        String pdfFilePath = "target/cucumber/cucumber-reports";
+//        PdfUtils.convertHtmlToPdf(htmlFilePath, pdfFilePath);
 
-        EmailUtils.sendEmailWithAttachment(recipient, subject, body, pdfFilePath);
+        EmailUtils.sendEmailWithAttachment(recipient, subject, body, htmlFilePath);
     }
 }

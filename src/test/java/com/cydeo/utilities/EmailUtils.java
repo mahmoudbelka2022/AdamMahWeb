@@ -13,12 +13,15 @@ import javax.mail.internet.*;
     public class EmailUtils {
 
         public static void sendEmailWithAttachment(String recipient, String subject, String body, String attachmentFilePath) throws MessagingException {
+
             String sender = "belkati2017@gmail.com";
-            String password = "Mamabga84#";
+            String password = "vutbntcmloeveyvu";
+
             String host = "smtp.gmail.com";
-            int port = 587;
+            int port = 465;
 
             Properties properties = new Properties();
+            properties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
             properties.put("mail.smtp.auth", "true");
             properties.put("mail.smtp.starttls.enable", "true");
             properties.put("mail.smtp.host", host);

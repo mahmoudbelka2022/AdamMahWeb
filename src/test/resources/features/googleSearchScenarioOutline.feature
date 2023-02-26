@@ -13,4 +13,4 @@ Feature: Google Search
       | Brazil     | Brasília         |
       | Uzbekistan | Tashkent         |
       | Ukraine    | Kyiv             |
-      | Morocco    | Rabet            |
+      | Morocco    | Rabat            |
